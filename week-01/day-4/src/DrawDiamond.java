@@ -21,24 +21,22 @@ public class DrawDiamond {
 
         int i, j, k, l, m;
 
-        for (i = 1; i <= level; i++) {
-            for (j = level; j>i; j--) {
-                System.out.print(" ");
-            }
-            for (k = 1; k<=(i*2)-1; k++) {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+        for (i = 0; i < lines; i++) {
+            if (i <= lines/2) {
+                for (j = lines/2; j > i; j--) {
+                    System.out.print(" ");
+                }
+                for (k = 0; k < (2*i)+1; k++) {
+                    System.out.print("*");
+                }
 
-        System.out.println();
-
-        for (i = 0; i <= level; i++) {
-            for (l = 0; l < i; l++) {
-                System.out.print(" ");
-            }
-            for (m = 0; m < ((level-i)*2)-1; m++) {
-                System.out.print("*");
+            } else {
+                for (l = lines/2; l < i; l++ ) {
+                    System.out.print(" ");
+                }
+                for (m = 0; m < (lines-i)*2-1; m++) {
+                    System.out.print("*");
+                }
             }
             System.out.println();
         }
