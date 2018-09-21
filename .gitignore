@@ -1,1 +1,6 @@
 *.mp4
+.idea
+*.xml
+*.iml
+out
+.class
