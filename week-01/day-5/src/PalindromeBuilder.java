@@ -8,6 +8,7 @@ public class PalindromeBuilder {
         int i;
         for (i = 0; i < l; i++) {
             String letter = String.valueOf(word.charAt(l-i-1));
+            int j;
             pali = pali + letter;
         }
         return pali;

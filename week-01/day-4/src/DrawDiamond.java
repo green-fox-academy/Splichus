@@ -19,19 +19,21 @@ public class DrawDiamond {
         System.out.println("How many lines your diamond shall have?");
         int lines = reader.nextInt();
 
-        int i, j, k, l, m;
+        int i, k, m;
+
+        double j, l;
 
         for (i = 0; i < lines; i++) {
             if (i < lines/2) {
-                for (j = lines/2; j > i+1; j--) {
+                for (j = lines/2.0; j > i+1; j--) {
                     System.out.print(" ");
                 }
-                for (k = 0; k < (2*i)+1; k++) {
+                for (k = 0; k < (2*i+1); k++) {
                     System.out.print("*");
                 }
 
             } else {
-                for (l = lines/2; l < i; l++ ) {
+                for (l = lines/2.0; l < i; l++ ) {
                     System.out.print(" ");
                 }
                 for (m = 0; m < (lines-i)*2-1; m++) {
