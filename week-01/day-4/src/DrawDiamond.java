@@ -22,8 +22,8 @@ public class DrawDiamond {
         int i, j, k, l, m;
 
         for (i = 0; i < lines; i++) {
-            if (i <= lines/2) {
-                for (j = lines/2; j > i; j--) {
+            if (i < lines/2) {
+                for (j = lines/2; j > i+1; j--) {
                     System.out.print(" ");
                 }
                 for (k = 0; k < (2*i)+1; k++) {
