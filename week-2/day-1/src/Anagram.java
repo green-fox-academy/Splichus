@@ -17,11 +17,11 @@ public class Anagram {
 
         Arrays.sort(word1Char);
         Arrays.sort(word2Char);
-        
+
             if (Arrays.equals(word1Char, word2Char)) {
-                System.out.println("Is palindrome");
+                System.out.println("Are Anagrams");
             } else {
-                System.out.println("Not pslindromes");
+                System.out.println("Not Anagrams");
         }
 
     }
