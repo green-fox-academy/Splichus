@@ -18,7 +18,6 @@ public class Bubble {
 
         if (!descending) {
             Arrays.sort(array);
-            int[] toRet;
             int[] toReturn = Arrays.copyOf(array, array.length);
             return toReturn;
         } else {

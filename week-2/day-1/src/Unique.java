@@ -4,6 +4,9 @@ public class Unique {
 
     public static void main(String[] args) {
 
+        double v = 37.9;
+
+
         int[] test1 = {1, 11, 34, 11, 52, 61, 1, 34};
         int[] test = unique(test1);
 
@@ -34,4 +37,5 @@ public class Unique {
         addArray[addArray.length-1] = number;
         return addArray;
     }
+
 }
