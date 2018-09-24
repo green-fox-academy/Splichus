@@ -14,6 +14,13 @@ public class PalindromeBuilder {
         return pali;
     }
 
+    public static int dice (int sides, int count) {
+        double ran = (Math.random()*sides)+1;
+        int ranint = (int) ran;
+        int result = ranint * count;
+        return result;
+    }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
@@ -21,5 +28,7 @@ public class PalindromeBuilder {
         String word = scan.nextLine();
 
         System.out.println(word+Palindrome(word));
+
+        System.out.println(dice(6, 3));
     }
 }
