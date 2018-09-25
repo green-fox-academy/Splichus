@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class AppendA {
 
     public static void main(String[] args) {
@@ -7,6 +9,10 @@ public class AppendA {
 
         String[] animals = {"koal", "pand", "zebr"};
 
+        ArrayList<Integer> poklop = new ArrayList<>();
+
+        poklop.remo
+
         for (int i = 0; i < animals.length; i++) {
 
             animals[i] = animals[i]+"a";
@@ -14,6 +20,7 @@ public class AppendA {
 
         for (int i = 0; i < animals.length; i++) {
             System.out.println(animals[i]);
+
 
         }
     }

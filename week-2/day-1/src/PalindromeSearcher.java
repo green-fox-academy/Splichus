@@ -7,11 +7,5 @@ public class PalindromeSearcher {
     public static void main(String[] args) {
         System.out.println("Give me a String!");
         String read = scan.nextLine();
-
-
-
     }
-
-    public static
-
 }
