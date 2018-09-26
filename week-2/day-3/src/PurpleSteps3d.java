@@ -4,20 +4,24 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PurpleSteps {
+public class PurpleSteps3d {
     public static void mainDraw(Graphics graphics) {
-//      Reproduce this:
-//      https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png
-        printSteps(graphics, 9, 20);
+        // Reproduce this:
+        // [https://github.com/green-fox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps-3d/r4.png]
+        printSteps(graphics, 7, 10);
+
     }
-    public static void printSteps (Graphics g, int howManySteps, int howBigSteps) {
+    public static void printSteps (Graphics g, int howManySteps, int length) {
+        int sum = 0;
         for (int i = 0; i < howManySteps ; i++) {
+            sum += i;
             g.setColor(Color.black);
-            g.drawRect(i*howBigSteps, i*howBigSteps, howBigSteps, howBigSteps);
+            g.drawRect(sum*length, sum*length, i*length+length, i*length+length);
             g.setColor(Color.BLUE);
-            g.fillRect(i*howBigSteps+1, i*howBigSteps+1, howBigSteps-1, howBigSteps-1);
+            g.fillRect(sum*length+1, sum*length+1, i*length+length-1, i*length+length-1);
         }
     }
+
     // Don't touch the code below
     static int WIDTH = 320;
     static int HEIGHT = 343;
