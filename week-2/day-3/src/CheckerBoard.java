@@ -7,9 +7,9 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class CheckerBoard {
     public static void mainDraw(Graphics graphics) {
         // Fill the canvas with a checkerboard pattern.
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < (double)WIDTH/20; i++) {
             if (i%2 == 0) {
-                for (int j = 0; j < 10; j++) {
+                for (int j = 0; j < (double)WIDTH/20; j++) {
                     if (j % 2 == 0) {
                         blackBox(graphics, j * 20, i*20);
                     } else {
@@ -17,7 +17,7 @@ public class CheckerBoard {
                     }
                 }
             } else {
-                for (int k = 0; k < 10; k++) {
+                for (int k = 0; k < (double)WIDTH/20; k++) {
                     if (k % 2 == 0) {
                         whiteBox(graphics, k * 20, i*20);
                     } else {
