@@ -9,12 +9,8 @@
             graphics.setColor(Color.GREEN);
             for (int i = 0; i < WIDTH; i+=2) {
                 graphics.drawLine(0, i, i, HEIGHT);
-            }
-            graphics.setColor((Color.BLUE));
-            for (int i = 0; i < WIDTH; i+=2) {
+                graphics.setColor((Color.BLUE));
                 graphics.drawLine(i, 0, WIDTH, i);
-            }
-
         }
 
         // Don't touch the code below
