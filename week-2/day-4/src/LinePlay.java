@@ -7,10 +7,11 @@
     public class LinePlay {
         public static void mainDraw(Graphics graphics) {
             graphics.setColor(Color.GREEN);
-            for (int i = 0; i < WIDTH; i+=2) {
+            for (int i = 0; i < WIDTH; i+=10) {
                 graphics.drawLine(0, i, i, HEIGHT);
                 graphics.setColor((Color.BLUE));
                 graphics.drawLine(i, 0, WIDTH, i);
+            }
         }
 
         // Don't touch the code below

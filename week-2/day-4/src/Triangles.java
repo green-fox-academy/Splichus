@@ -4,16 +4,20 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class EnvelopeStar {
+public class Triangles {
     public static void mainDraw(Graphics graphics){
-        graphics.setColor(Color.GREEN);
-        for (int i = 0; i < HEIGHT/2; i+=10) {
-            graphics.drawLine(WIDTH/2, i, WIDTH/2+i, HEIGHT/2);
-            graphics.drawLine(WIDTH/2, i, WIDTH/2-i, HEIGHT/2);
-            graphics.drawLine(WIDTH/2, HEIGHT-i, WIDTH/2+i, HEIGHT/2);
-            graphics.drawLine(WIDTH/2, HEIGHT-i, WIDTH/2-i, HEIGHT/2);
-        }
+
+        int[] xCoords = {20, 30, 10};
+        int[] yCoords = {10, 20, 20};
+
+        drawTriangle(graphics, xCoords, yCoords);
     }
+
+    public static void drawTriangle (Graphics graphics, int[] xCoords, int[] yCoords) {
+        graphics.drawPolygon(xCoords, yCoords, 3);
+    }
+
+
 
     // Don't touch the code below
     static int WIDTH = 500;
