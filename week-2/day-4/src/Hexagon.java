@@ -17,13 +17,16 @@ public class Hexagon {
         int startY = 70;
         double height = (length * Math.sqrt(3)) / 2;
 
-        drawHexagon(graphics, startX, startY, length);
+        for (int i = 0; i <= size/2; i++ ) {
+            drawLineOfHexagons(graphics, (int)(startX-(1.5*i*length)), (int)(startY+(i*height)), size-i, length);
+            drawLineOfHexagons(graphics, (int)(startX+(1.5*i*length)), (int)(startY+(i*height)), size-i, length);
+        }
     }
 
     public static void drawLineOfHexagons (Graphics graphics, int x, int y, int lines, int length) {
-
+        double height = (length * Math.sqrt(3)) / 2;
         for (int i = 0; i < lines; i++) {
-            drawHexagon(graphics, x, y+(2*i*length), length);
+            drawHexagon(graphics, x, (int)(y+(2*i*height)), length);
         }
     }
 
@@ -31,7 +34,7 @@ public class Hexagon {
 
         double height = (length * Math.sqrt(3)) / 2;
 
-        int[] xArray = {startX, startX-length/2, startX-length/2, startX+length/2, startX+length, startX+length/2};
+        int[] xArray = {startX, startX-length/2, startX, startX+length, startX+length+length/2, startX+length};
         int[] yArray = {startY, (int)(startY-height), (int)(startY-(2*height)),(int)(startY-(2 * height)),(int)(startY-height),startY};
 
         graphics.drawPolygon(xArray, yArray, 6);
