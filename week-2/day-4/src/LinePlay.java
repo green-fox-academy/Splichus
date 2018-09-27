@@ -1,16 +1,25 @@
     import javax.swing.*;
 
     import java.awt.*;
+    import java.util.Scanner;
 
     import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
     public class LinePlay {
         public static void mainDraw(Graphics graphics) {
-            graphics.setColor(Color.GREEN);
-            for (int i = 0; i < WIDTH; i+=10) {
-                graphics.drawLine(0, i, i, HEIGHT);
-                graphics.setColor((Color.BLUE));
-                graphics.drawLine(i, 0, WIDTH, i);
+            Scanner scan = new Scanner(System.in);
+            System.out.println("How many on page?");
+            double kolik = Math.sqrt((double)scan.nextInt());
+
+            for (int i = 0; i <= kolik; i++) {
+                for (int j = 0; j <= kolik; j++) {
+                    for (int k = 0; k < WIDTH/ kolik; k +=3) {
+                        graphics.setColor(Color.GREEN);
+                        graphics.drawLine((int)(WIDTH-(((kolik -i)/ kolik)*WIDTH)+k), (int)(HEIGHT-((((kolik -j)/ kolik)*HEIGHT))), (int)(WIDTH-(((kolik -i-1)/ kolik)*WIDTH)), (int)(HEIGHT-((((kolik -j)/ kolik)*HEIGHT)))+k);
+                        graphics.setColor(Color.BLUE);
+                        graphics.drawLine((int)(WIDTH-(((kolik -i)/ kolik)*WIDTH)), (int)(HEIGHT-((((kolik -j)/ kolik)*HEIGHT)))+k, (int)(WIDTH-(((kolik -i)/ kolik)*WIDTH))+k, (int)(HEIGHT-((((kolik -j-1)/ kolik)*HEIGHT))));
+                    }
+                }
             }
         }
 
@@ -20,11 +29,13 @@
 
         public static void main(String[] args) {
             JFrame jFrame = new JFrame("Drawing");
-            jFrame.setSize(new Dimension(WIDTH, HEIGHT));
             jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-            jFrame.add(new ImagePanel());
+            ImagePanel panel = new ImagePanel();
+            panel.setPreferredSize(new Dimension(WIDTH, HEIGHT));
+            jFrame.add(panel);
             jFrame.setLocationRelativeTo(null);
             jFrame.setVisible(true);
+            jFrame.pack();
         }
 
         static class ImagePanel extends JPanel {

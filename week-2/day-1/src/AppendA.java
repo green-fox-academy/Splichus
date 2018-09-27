@@ -11,8 +11,6 @@ public class AppendA {
 
         ArrayList<Integer> poklop = new ArrayList<>();
 
-        poklop.remo
-
         for (int i = 0; i < animals.length; i++) {
 
             animals[i] = animals[i]+"a";
