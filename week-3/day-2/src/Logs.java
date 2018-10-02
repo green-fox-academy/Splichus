@@ -59,6 +59,6 @@ public class Logs {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return (double)get/(double)post;
+        return get/(double)post;
     }
 }
