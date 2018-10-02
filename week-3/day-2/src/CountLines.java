@@ -9,10 +9,10 @@ public class CountLines {
         System.out.println(countLines("my-file.txt"));
     }
 
-    public static int countLines (String fileName) {
+    public static int countLines(String fileName) {
         Path path = Paths.get(fileName);
         try {
-            List<String> lines= Files.readAllLines(path);
+            List<String> lines = Files.readAllLines(path);
             return lines.size();
         } catch (IOException e) {
             return 0;

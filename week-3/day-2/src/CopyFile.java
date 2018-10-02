@@ -12,14 +12,15 @@ public class CopyFile {
         // It should return a boolean that shows if the copy was successful
         copyFile("my-file.txt", "my-file2.txt");
     }
-    public static boolean copyFile (String copyFrom, String copyTo) {
+
+    public static boolean copyFile(String copyFrom, String copyTo) {
         Path originalFile = Paths.get(copyFrom);
         Path destinationFile = Paths.get(copyTo);
 
         try {
-           List<String> lines = Files.readAllLines(originalFile);
-           Files.write(destinationFile, lines);
-           return true;
+            List<String> lines = Files.readAllLines(originalFile);
+            Files.write(destinationFile, lines);
+            return true;
         } catch (IOException e) {
             return false;
         }
