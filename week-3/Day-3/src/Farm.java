@@ -55,6 +55,11 @@ public class Farm {
         myFarm.allAnimals.add(bear);
         myFarm.allAnimals.add(dog);
 
+        for (Animal animal : myFarm.allAnimals) {
+            System.out.println(animal.name);
+            System.out.println(animal.hunger);
+        }
+
         myFarm.slaugther();
 
         for (Animal animal : myFarm.allAnimals) {
