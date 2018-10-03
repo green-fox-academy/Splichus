@@ -2,6 +2,9 @@ class PostIt {
     String backgroundColor;
     String text;
     String textColor;
+    public PostIt() {
+
+    }
 
     public PostIt(String backgroundColor, String text, String textColor) {
         this.textColor = textColor;
