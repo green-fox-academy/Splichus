@@ -7,7 +7,20 @@ public class Dominoes {
         // You have the list of Dominoes
         // Order them into one snake where the adjacent dominoes have the same numbers on their adjacent sides
         // eg: [2, 4], [4, 3], [3, 5] ...
+        String orderedDominoes = "";
 
+        System.out.println(dominoes.get(1).getValues()[0]);
+
+
+        for (int i = 0; i < dominoes.size(); i++) {
+            for (int j = 1; j < dominoes.size(); j++) {
+                if (dominoes.get(i).getValues()[1] == dominoes.get(j).getValues()[0]) {
+                    dominoes.add(dominoes.size(), dominoes.get(i+1));
+                    dominoes.set(i+1,dominoes.get(j));
+                    dominoes.remove(j);
+                }
+            }
+        }
         System.out.println(dominoes);
     }
 
