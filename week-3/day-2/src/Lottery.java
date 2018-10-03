@@ -31,6 +31,7 @@ public class Lottery {
 
                 }
             }
+
             ArrayList<Integer> frequency = new ArrayList<>();
             frequency.add(0);
             for (int i = 1; i <= 90 ; i++) {
