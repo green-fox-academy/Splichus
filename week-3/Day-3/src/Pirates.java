@@ -21,6 +21,7 @@ public class Pirates {
                 System.out.println("Pour me anudder!");
                 drinkSomeRum();
             } else {
+                System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
                 passOut();
             }
         } else {
@@ -36,11 +37,14 @@ public class Pirates {
             if (!dead) {
                 if (roll < 0.33) {
                     die();
+                    System.out.println(name + " lost and died in the brawl");
                 } else if (roll > 0.33 && roll < 0.66) {
                     oponent.die();
+                    System.out.println(oponent.name + " lost and died in the brawl");
                 } else {
                     passOut();
                     oponent.passOut();
+                    System.out.println("No fight happened both " +name+ " and " +oponent.name+ " passed out");
                 }
             } else {
                 pirateDead();
@@ -52,7 +56,7 @@ public class Pirates {
     public void pirateDead () {System.out.println(name+" is dead");}
 
     public void passOut () {
-        System.out.println("Arghh, I'ma Pirate. How d'ya d'ink its goin?");
+
         intoxication = 0;
     }
 
@@ -68,5 +72,15 @@ public class Pirates {
 //
 //        And... if you get that far...
 //        Add a parrot.
+
+        Pirates blackeye = new Pirates("Blackeye");
+        Pirates randy = new Pirates("Randy");
+        Pirates dandy = new Pirates("Dandy");
+
+        blackeye.die();
+        dandy.brawl(randy);
+
+
+
     }
 }
