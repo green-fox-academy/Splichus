@@ -6,7 +6,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Hexagons {
     public static void mainDraw(Graphics graphics) {
-        drawOneLevel(graphics, 0, 0, 900, 6);
+        drawOneLevel(graphics, 0, 0, 900, 9);
 
 
     }
