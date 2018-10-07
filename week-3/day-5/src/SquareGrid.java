@@ -7,9 +7,11 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class SquareGrid {
 
     public static void mainDraw(Graphics graphics) {
-        int centerX = WIDTH/2;
-        int centerY = WIDTH/2;
-        int width = WIDTH;
+        int random = Helpers.randomNumber(700, 50);
+
+        int centerX = random/2;
+        int centerY = random/2;
+        int width = random;
         int count = 4;
         drawSquares(graphics, centerX, centerY, width, count);
     }
@@ -18,6 +20,7 @@ public class SquareGrid {
         if (count==0) {
 
         } else {
+            graphics.setColor(Helpers.randomColor());
             drawSquare(graphics, centerX, centerY, width, 10*count-2);
             drawSquares(graphics, centerX - (width/4), centerY - (width / 4), width/2, count-1);
             drawSquares(graphics, centerX + (width/4), centerY - (width / 4), width/2, count-1);
@@ -51,6 +54,15 @@ public class SquareGrid {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
+
+        for (int i = 0; i < 100; i++) {
+            panel.repaint();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     static class ImagePanel extends JPanel {

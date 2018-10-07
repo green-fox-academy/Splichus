@@ -7,9 +7,11 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Carpet {
 
     public static void mainDraw(Graphics graphics) {
-        int centerX= WIDTH/2;
-        int centerY = WIDTH/2;
-        int width = WIDTH;
+        int random = WIDTH;
+
+        int centerX= random/2;
+        int centerY = random/2;
+        int width = random;
         int count = 7;
         drawSquares(graphics, centerX, centerY, width, count);
     }
@@ -20,6 +22,7 @@ public class Carpet {
 //        int[] y = {(int)width/3, (int)(2*width/3), (int)(2*width/3), (int)width/3};
         if (count == 1) {
         } else {
+
             graphics.fillRect((int)(centerX - width/6), (int)(centerY - width/6),(int)(width/3),(int)(width/3));
             drawSquares(graphics, centerX-width/3, centerY, width/3, count -1);
             drawSquares(graphics, centerX+width/3, centerY, width/3, count-1);
@@ -45,6 +48,14 @@ public class Carpet {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
+//        for (int i = 0; i < 100; i++) {
+//            panel.repaint();
+//            try {
+//                Thread.sleep(100);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
     }
 
     static class ImagePanel extends JPanel {

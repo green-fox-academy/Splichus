@@ -7,10 +7,12 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Hexagons {
 
     public static void mainDraw(Graphics graphics) {
+
+
         int cornerX = 0;
         int cornerY = 0;
-        int width = WIDTH;
-        int count = 8;
+        int width = Helpers.randomNumber(600, 50);
+        int count = 6;
 
         drawHexagons(graphics, cornerX, cornerY, width, count);
 
@@ -22,6 +24,7 @@ public class Hexagons {
 
         if (count == 1) {
         } else {
+            graphics.setColor(Helpers.randomColor());
             graphics.drawLine((int) (cornerX + (width / 4)), (int) cornerY, (int) cornerX, (int) (cornerY + l));
             graphics.drawLine((int) (cornerX), (int) (cornerY + l), (int) (cornerX + (width / 4)), (int) (cornerY + (2 * l)));
             graphics.drawLine((int) (cornerX + (width / 4)), (int) (cornerY + (2 * l)), (int) (cornerX + (3 * width / 4)), (int) (cornerY + (2 * l)));
@@ -50,6 +53,15 @@ public class Hexagons {
         jFrame.setLocationRelativeTo(null);
         jFrame.setVisible(true);
         jFrame.pack();
+
+        for (int i = 0; i < 100; i++) {
+            panel.repaint();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     static class ImagePanel extends JPanel {
