@@ -8,7 +8,7 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 public class Circles {
 
     public static void mainDraw(Graphics graphics) {
-        drawCircle(graphics, 0, 0, WIDTH, 9);
+        drawCircle(graphics, 0, 0, WIDTH, 6);
 
     }
 
