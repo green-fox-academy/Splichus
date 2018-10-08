@@ -37,7 +37,7 @@ public class Aircraft {
     }
 
     String getStatus() {
-        return "Type" +getType()+ "| Ammo: " +ammo+ "| Base Damage: " +baseDmg+ "| All damage: " +ammo*baseDmg;
+        return "Type: " +getType()+ " | Ammo: " +ammo+ " | Base Damage: " +baseDmg+ " | All damage: " +ammo*baseDmg;
     }
 
     boolean isPriority() {

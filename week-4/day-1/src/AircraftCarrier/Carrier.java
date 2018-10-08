@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Carrier {
 
-    ArrayList<Aircraft> carrier;
+    ArrayList<Aircraft> carrier = new ArrayList<>();
     int ammo;
     int HP;
 
@@ -24,11 +24,11 @@ public class Carrier {
         } else {
             for (int i = 0; i < carrier.size(); i++) {
                if (carrier.get(i).isPriority()) {
-                   ammo-= carrier.get(i).refill(ammo);
+                   ammo= carrier.get(i).refill(ammo);
                }
             }
             for (int i = 0; i < carrier.size() ; i++) {
-                ammo-= carrier.get(i).refill(ammo);
+                ammo= carrier.get(i).refill(ammo);
             }
         }
     }
@@ -51,10 +51,16 @@ public class Carrier {
         }
         if (HP > 0) {
             System.out.println("HP: " +HP+ " | Aircraft count: " +carrier.size()+ " | Ammo Storage: " +ammo+ " | Total Damage: " + totalDmg);
+            System.out.println();
             System.out.println("Aircrafts: ");
+            System.out.println();
             for(Aircraft plane : carrier) {
-                plane.getStatus();
+                System.out.println(plane.getStatus());
             }
+            System.out.println();
+        } else {
+            System.out.println("Its dead jim :(");
+            System.out.println();
         }
     }
 }
