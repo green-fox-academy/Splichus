@@ -26,6 +26,9 @@ public class FleetOfThings {
 //                }
 //            }
 //        }
+        for (Thing thing : fleet.things) {
+            thing.printAllFields();
+        }
         Collections.sort(fleet.things);
         System.out.println(fleet);
     }
