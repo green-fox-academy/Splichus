@@ -1,3 +1,5 @@
+import java.util.Collections;
+
 public class FleetOfThings {
 
     public static void main(String[] args) {
@@ -17,7 +19,14 @@ public class FleetOfThings {
         // 2. [ ] Remove the obstacles
         // 3. [x] Stand up
         // 4. [x] Eat lunch
-
+//        for (int i = 0; i < fleet.things.size(); i++) {
+//            for (int j = i+1; j < fleet.things.size(); j++) {
+//                if (fleet.things.get(i).compareTo(fleet.things.get(j))>0) {
+//                    Collections.swap(fleet.things, i, j);
+//                }
+//            }
+//        }
+        Collections.sort(fleet.things);
         System.out.println(fleet);
     }
 }
