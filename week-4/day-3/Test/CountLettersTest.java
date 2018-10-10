@@ -11,9 +11,9 @@ public class CountLettersTest {
 
     @Before
     public void testMap () {
-        dictionary.put("a", 2);
-        dictionary.put("b", 1);
-        dictionary.put("c", 3);
+        dictionary.put('a', 2);
+        dictionary.put('b', 1);
+        dictionary.put('c', 3);
     }
 
     @Test
