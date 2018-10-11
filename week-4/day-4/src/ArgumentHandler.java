@@ -58,7 +58,11 @@ public class ArgumentHandler {
     public void cArgument(int index) {
         try {
             String task = lines.get(index);
-            task+=";j3p2n1";
+            if (task.subSequence(task.length()-7, task.length()).equals(";j3p2n1")) {
+                task = task.substring(0, task.length()-7);
+            } else {
+                task+=";j3p2n1";
+            }
             lines.set(index, task);
             Files.write(database, lines);
         } catch (IOException e) {

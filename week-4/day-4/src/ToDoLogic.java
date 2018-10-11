@@ -61,7 +61,7 @@ public class ToDoLogic {
         }
     }
     void notSupportedArgument (String[] args) {
-        if (!args[0].equals("-a") || !args[0].equals("-l") || !args[0].equals("-r") || !args[0].equals("-c")) {
+        if (!args[0].equals("-a") && !args[0].equals("-l") && !args[0].equals("-r") && !args[0].equals("-c")) {
             System.out.println("Unsupported ArgumentHandler");
             System.out.println("");
             System.out.println(arg.blankArgument());
