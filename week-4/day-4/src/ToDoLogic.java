@@ -1,6 +1,6 @@
 public class ToDoLogic {
 
-    static ArgumentHandler arg = new ArgumentHandler();
+    private ArgumentHandler arg = new ArgumentHandler();
 
 
     boolean isDigit(String string) {
@@ -62,11 +62,9 @@ public class ToDoLogic {
     }
     void notSupportedArgument (String[] args) {
         if (!args[0].equals("-a") && !args[0].equals("-l") && !args[0].equals("-r") && !args[0].equals("-c")) {
-            System.out.println("Unsupported ArgumentHandler");
+            System.out.println("Unsupported Argument");
             System.out.println("");
             System.out.println(arg.blankArgument());
         }
     }
-
-
 }
