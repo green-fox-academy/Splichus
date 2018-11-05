@@ -15,11 +15,14 @@ public class Todo {
         this.createdAt = LocalDateTime.now();
     }
 
-    public Todo(int id, String name, LocalDateTime completedAt) {
+    public Todo(int id, String name, String date) {
         if (id > ID) ID = id;
         this.id = id;
         this.name = name;
-        this.completedAt = completedAt;
+        if (date != null) {
+            this.completedAt = LocalDateTime.parse(date);
+        }
+
     }
 
     public Todo(int id, String name) {
@@ -86,10 +89,4 @@ public class Todo {
     public LocalDateTime getCompletedAt() {
         return completedAt;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-
 }

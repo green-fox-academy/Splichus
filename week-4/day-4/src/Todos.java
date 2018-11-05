@@ -5,22 +5,6 @@ import java.util.List;
 public class Todos {
 
     Database database = new Database();
-    List<Todo> todos = new ArrayList<>();
-
-    public Todos() {
-        List<String[]> split = new ArrayList<>();
-        for (int i = 0; i < database.lines.size() ; i++) {
-            split.add(database.lines.get(i).split(";"));
-        }
-        for (int i = 0; i < split.size() ; i++) {
-            if (split.get(i).length>2) {
-                todos.add(new Todo(Integer.valueOf(split.get(i)[0]), split.get(i)[1], LocalDateTime.parse(split.get(i)[2])));
-            } else {
-                todos.add(new Todo(Integer.valueOf(split.get(i)[0]), split.get(i)[1]));
-            }
-        }
-    }
-
 
     public String blankArgument () {
         return "Command line todo application\n" +
@@ -34,10 +18,11 @@ public class Todos {
                 "-u [id] [new todo name] updates the todo\n";
     }
     public void aArgument (String todoName) {
-        Todo todo = new Todo(todoName);
-        database.saveTodo(todo);
+        database.loadAll();
+        database.saveTodo(new Todo(todoName));
     }
     public String lArgument() {
+        List<Todo> todos = database.loadAll();
         String toReturn = "";
         if (todos.size()==0) {
             toReturn="No todos for today! :)";
@@ -48,14 +33,13 @@ public class Todos {
         return toReturn;
     }
     public void cArgument(int id) {
-        for (int i = 0; i < todos.size(); i++) {
-            if (todos.get(i).getId()==id) {
-                todos.get(i).complete();
-            }
-        }
-        database.saveAll(todos);
+        Todo toComplete = database.loadOne(id);
+        toComplete.complete();
+        database.saveTodo(toComplete);
+
     }
     public void rArgument(int id) {
+        List<Todo> todos = database.loadAll();
         for (int i = 0; i <todos.size() ; i++) {
             if (todos.get(i).getId()==id) {
                 todos.remove(i);

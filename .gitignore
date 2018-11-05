@@ -4,4 +4,4 @@
 *.iml
 out
 .class
-*.log
+*.log.gradle
