@@ -4,9 +4,10 @@
     <title>Thymeleaf Exercise #</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/show.css" />
 </head>
 <body>
-    <table>
+    <table cellspacing="0">
         <tr>
             <th>Name</th>
             <th>Balance</th>
@@ -14,8 +15,8 @@
         </tr>
         <tr>
             <td th:text="${name}">name</td>
-            <td th:text="${balance}">balance</td>
-            <td th:text="${animalType}</td>
+            <td th:text="|${balance} Zebra|">balance</td>
+            <td th:text="${animalType}">animalType</td>
         </tr>
 
     </table>
