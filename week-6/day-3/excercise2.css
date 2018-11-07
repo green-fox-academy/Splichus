@@ -1,0 +1,47 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: lightgray;
+}
+form {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    padding: 1em;
+    padding: 50px;
+    background-color: white;
+}
+h1 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+
+}
+label {
+    text-transform: uppercase;
+    font-size: 8px;
+    display: block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+}
+input {
+    height: 40px;
+    width: 300px;
+    font-size: 36px;
+}
+a {
+    color: black;
+    font-size: 10px;
+    text-decoration: none;
+    float: right;
+
+}
+button {
+    margin-top: 30px;
+    width: 150px;
+    height: 50px;
+    background-color: black;
+    color: aliceblue;
+    border: 5px;
+    border-radius: 25px;
+    padding: 0;
+}

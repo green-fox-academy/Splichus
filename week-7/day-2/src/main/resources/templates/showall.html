@@ -13,13 +13,22 @@
         <th>Name</th>
         <th>Balance</th>
         <th>Animal Type</th>
+        <th>The King?</th>
+        <th>Good/Bad</th>
+        <th>Add Money!!!</th>
     </tr>
-    <tr th:each="account : ${list}" th:class="${account.isKing()}?'king':''">
+    <tr th:each="account : ${list}" th:class="${account.isKing()}?'king':''" th:switch="${account.isBad()}">
         <td th:text="${accountStat.index}"></td>
         <td th:text="${account.getName()}"></td>
         <td th:text="${account.getBalanceToPrint()}"></td>
         <td th:text="${account.getAnimalType()}"></td>
         <td th:text="${account.isKing()} ? 'The King!' : 'Not a King'"></td>
+        <td th:case="'bad'" th:text="'Bad Guy'"></td>
+        <td th:case="*" th:text="'Good Guy'"></td>
+        <td><form th:action="'/showall'"}>
+            <input type="hidden" id="name" name="name" th:value="${account.getName()}">
+            <button>Give Moneyss!</button></form>
+        </td>
     </tr>
 
 </table>

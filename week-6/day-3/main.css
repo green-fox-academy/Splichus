@@ -1,0 +1,48 @@
+th {
+   background-color: black;
+   color: white;
+   height: 60px;
+   
+   
+}
+th, td {
+    padding-left: 20px;
+}
+td {
+    width: 300px;
+    height: 60px;
+    border: 1px solid darkgray;
+    
+}
+tr:nth-child(odd) {
+    background-color:lightgray;
+}
+tr:nth-child(even) {
+    background-color: white;
+
+}
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+    
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+table {
+
+    font-size: 20px;
+    color: darkcyan;
+    border: 20px solid blue;
+    text-align: left;
+    background-color: blue;
+}
+.thleft {
+    border-bottom: 3px solid darkgray;
+    border-right: 1px solid darkgray;
+    border-top-left-radius: 10px;  
+}
+.thright {
+    border-bottom: 3px solid darkgray;
+    border-left: 1px solid darkgray;
+    border-top-right-radius: 10px;
+}

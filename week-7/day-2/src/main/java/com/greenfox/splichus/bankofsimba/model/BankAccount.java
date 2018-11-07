@@ -8,12 +8,15 @@ public class BankAccount {
     String animalType;
     BigDecimal balance;
     boolean isKing = false;
+    String isBad;
 
     public BankAccount(String name, String balance, String animalType) {
         this.name = name;
         this.animalType = animalType;
         this.balance = new BigDecimal(balance);
         if (name.equals("Simba")) isKing = true;
+        if (name.equals("Scar")) isBad = "bad";
+        else isBad = "good";
     }
 
     public String getName() {
@@ -34,5 +37,13 @@ public class BankAccount {
 
     public boolean isKing() {
         return isKing;
+    }
+
+    public String isBad() {
+        return isBad;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
     }
 }

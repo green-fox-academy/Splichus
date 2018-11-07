@@ -5,11 +5,17 @@ import com.greenfox.splichus.bankofsimba.model.BankAcounts;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.List;
 
 @Controller
 public class BankAcountController {
+
+    BankAcounts accounts = new BankAcounts();
 
     @GetMapping(value = "/show")
     public String show(Model model) {
@@ -26,8 +32,17 @@ public class BankAcountController {
         return "htmlception";
     }
     @GetMapping("/showall")
-    public String showall(Model model) {
-        model.addAttribute("list", new BankAcounts().getAccounts());
+    public String showall(String name, Model model) {
+        for (int i = 0; i < accounts.getAccounts().size(); i++) {
+            if (accounts.getAccounts().get(i).getName().equals(name)){
+                if (name.equals("Simba")){
+                    accounts.getAccounts().get(i).setBalance(accounts.getAccounts().get(i).getBalance().add(new BigDecimal("100")));
+                } else {
+                    accounts.getAccounts().get(i).setBalance(accounts.getAccounts().get(i).getBalance().add(new BigDecimal("10")));
+                }
+            }
+        }
+        model.addAttribute("list", accounts.getAccounts());
         return "showall";
     }
 }
