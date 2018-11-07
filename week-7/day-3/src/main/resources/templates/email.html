@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/useful.css" />
+</head>
+<body>
+<h1>This is an email validator!</h1>
+<div>
+    <h3>Please enter your email</h3>
+    <form action="email">
+        <div>
+            <label for="email">Email:</label>
+            <input name="email" id="email" type="text">
+        </div>
+        <button type="submit">Validate!</button>
+    </form>
+    <p th:text="${valid.equals('yes')} ? 'Email is valid' : 'Email is not valid'"></p>
+</div>
+</body>
+</html>
