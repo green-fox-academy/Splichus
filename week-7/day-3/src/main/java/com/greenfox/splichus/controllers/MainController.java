@@ -42,7 +42,7 @@ public class MainController {
         String coded="";
         if (text != null) {
             for (int i = 0; i < text.length(); i++) {
-                coded += String.valueOf((int) text.charAt(i) + number);
+                coded += Character.toString((char)((int) text.charAt(i) + number));
             }
             model.addAttribute("coded", coded);
         }
