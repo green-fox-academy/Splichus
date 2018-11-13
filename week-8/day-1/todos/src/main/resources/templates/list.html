@@ -7,8 +7,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/useful.css" />
 </head>
 <body>
-<a href="/useful/colored">Random Colored Background</a>
-<a href="/useful/email">Email validator</a>
-<a href="/useful/caesar">Caesar Coding</a>
+<h1>Todos for Today: </h1>
+<ul>
+    <li th:each="todo : ${list}" th:text="${todo.getTitle()}"></li>
+</ul>
 </body>
 </html>

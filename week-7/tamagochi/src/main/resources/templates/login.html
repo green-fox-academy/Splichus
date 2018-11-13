@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tamagochi app!</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
+</head>
+<body>
+    <ul>
+    </ul>
+    <div>
+        <h1>Welcome to Programmer Fox Club!</h1>
+        <p>Please provide a name, so you can associate it to yur pet!</p>
+    </div>
+    <div>
+        <form method="post" action="/login">
+            <div>
+                <label for="name">Name</label>
+                <input name="name" id="name" type="text">
+            </div>
+            <div>
+                <button type="submit">Login!</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

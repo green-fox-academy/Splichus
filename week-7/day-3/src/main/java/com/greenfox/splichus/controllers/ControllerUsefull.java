@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class MainController {
+public class ControllerUsefull {
 
     UtilityService utilityService;
 
     @Autowired
-    public MainController(UtilityService utilityService) {
+    public ControllerUsefull(UtilityService utilityService) {
         this.utilityService = utilityService;
     }
 
@@ -29,11 +29,14 @@ public class MainController {
     }
     @RequestMapping("/useful/email")
     public String email(@RequestParam(name="email", required = false) String email, Model model){
-        if (email.contains(".") && email.contains("@")) {
-            model.addAttribute("valid", "yes");
-        } else {
-            model.addAttribute("valid", "no");
+        if (email != null) {
+            if (email.contains(".") && email.contains("@")) {
+                model.addAttribute("valid", "yes");
+            } else {
+                model.addAttribute("valid", "no");
+            }
         }
+        model.addAttribute("email", email);
         return "email";
     }
     @RequestMapping("/useful/caesar")

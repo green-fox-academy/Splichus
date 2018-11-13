@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tamagochi app!</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
+</head>
+<body>
+    <ul>
+        <li><a th:href="'\info?name='+${fox.getName()}">Information</a></li>
+        <li><a href="\login">Log in</a></li>
+        <li><a th:href="'\store?name='+${fox.getName()}">Nutrition store</a></li>
+        <li><a th:href="'\tricks?name='+${fox.getName()}">Trick Center</a> </li>
+        <li><a th:href="'\log?name='+${fox.getName()}">Log</a> </li>
+    </ul>
+    <ul>
+        <li th:each="line : ${log}" th:text="${line}"></li>
+    </ul>
+
+</body>
+</html>

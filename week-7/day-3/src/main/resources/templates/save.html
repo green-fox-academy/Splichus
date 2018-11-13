@@ -7,8 +7,9 @@
     <link rel="stylesheet" type="text/css" media="screen" href="/useful.css" />
 </head>
 <body>
-<a href="/useful/colored">Random Colored Background</a>
-<a href="/useful/email">Email validator</a>
-<a href="/useful/caesar">Caesar Coding</a>
+<div>
+    <p th:text="${status.equals('ok')} ? 'Student '+${name}+' added successfully' : 'Sorry the name '+${name}+' is already in the database'"></p>
+</div>
+
 </body>
 </html>

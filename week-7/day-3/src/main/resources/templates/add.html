@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/useful.css" />
+</head>
+<body>
+<div>
+    <h1>Add a student!</h1>
+    <div>
+        <form action="/gfa/save" method="get">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <button type="submit">Add student!</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

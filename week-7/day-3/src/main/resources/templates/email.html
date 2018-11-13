@@ -17,7 +17,7 @@
         </div>
         <button type="submit">Validate!</button>
     </form>
-    <p th:text="${valid.equals('yes')} ? 'Email is valid' : 'Email is not valid'"></p>
+    <p th:if="${email}" th:text="${valid.equals('yes')} ? 'Email is valid' : 'Email is not valid'"></p>
 </div>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Tamagochi app!</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.css" />
+</head>
+<body>
+<ul>
+    <li><a th:href="'\info?name='+${fox.getName()}">Information</a></li>
+    <li><a href="\login">Log in</a></li>
+    <li><a th:href="'\store?name='+${fox.getName()}">Nutrition store</a></li>
+    <li><a th:href="'\tricks?name='+${fox.getName()}">Trick Center</a> </li>
+    <li><a th:href="'\log?name='+${fox.getName()}">Log</a> </li>
+
+</ul>
+<h3 th:if="${newFox}" th:text="'This is new fox!'"}></h3>
+<img src="/greenfox.png">
+<p th:if="${fox}" th:text="'This is '+${fox.getName()}+'. Curently living on '+${fox.getFood().getFoodName()}+' and '+${fox.getDrink().getDrinkName()}+'. He knows '+${fox.getTricks().size()}+' tricks.'"></p>
+<p th:unless="${fox}" th:text="'This is Mr.Fox. Curently living on pizza and lemonade. He knows 2 tricks.'"></p>
+<h1>Known Tricks</h1>
+<div th:if="${fox}">
+    <ul th:if="${fox.getTricks().size()}">
+        <li th:each="trick : ${fox.getTricks()}" th:text="${trick.getName()}"></li>
+    </ul>
+    <p th:if="${fox.getTricks().size() == 0}" th:text="'You know no tricks, yet. Go and learn some'"></p>
+</div>
+<div th:unless="${fox}">
+    <ul>
+        <li>write HTML</li>
+        <li>code in Java</li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li th:each="line : ${log}" th:text="${line}"></li>
+    </ul>
+</div>
+
+</body>
+</html>

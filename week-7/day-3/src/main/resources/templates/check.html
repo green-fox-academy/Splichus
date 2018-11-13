@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/useful.css" />
+</head>
+<body>
+<div>
+    <h1>Check a student!</h1>
+    <div>
+        <form action="check" method="get">
+            <div>
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div>
+                <button type="submit">Check student!</button>
+            </div>
+        </form>
+    </div>
+    <div th:if="${name}" th:switch="${status}">
+        <p th:case="'exists'" th:text="'The student '+${name}+' is already in the databse'"></p>
+        <p th:case="'notexists'" th:text="'The student '+${name}+' is not in the databse'"></p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
