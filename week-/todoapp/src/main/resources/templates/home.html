@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <a href="/todo/add">Add new todo!</a>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Todos for Today: </h1>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <table class="table table-hover table-striped table-responsive" th:if="${list}">
+                    <thead>
+                        <tr>
+                            <th>ACTION</th>
+                            <th>done</th>
+                            <th>urgent</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="todo : ${list}">
+                            <td th:text="${todo.getTitle()}"></td>
+                            <td><span th:class="${todo.isDone()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></span></td>
+                            <td><span th:class="${todo.isUrgent()} ? 'glyphicon glyphicon-ok' : 'glyphicon glyphicon-remove'"></span></td>
+                            <td>
+                                <form method="post" action="/todo/delete">
+                                    <input name="id" th:value="${todo.getId()}" type="hidden">
+                                    <button type="submit" class="btn btn-danger">delete</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form method="get" action="/todo/edit">
+                                    <input name="id" th:value="${todo.getId()}" type="hidden">
+                                    <button type="submit" class="btn btn-primary">edit</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+        <p th:unless="${list}">No todos!</p>
+    </main>
+    <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

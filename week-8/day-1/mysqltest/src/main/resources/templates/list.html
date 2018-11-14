@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.css"/>
+</head>
+<body>
+<header>
+    <a href="/todo/add">Add new todo</a>
+</header>
+<main>
+    <h1>Todos for Today: </h1>
+    <table th:if="${list}">
+        <tr>
+            <th>ID</th>
+            <th>ACTION</th>
+            <th>done</th>
+            <th>urgent</th>
+        </tr>
+        <tr th:each="todo : ${list}">
+            <td th:text="${todo.getId()}"></td>
+            <td th:text="${todo.getTitle()}"></td>
+            <td th:text="${todo.isDone()}"></td>
+            <td th:text="${todo.isUrgent()}"></td>
+        </tr>
+    </table>
+    <p th:unless="${list}">No todos!</p>
+</main>
+</body>
+
+</html>

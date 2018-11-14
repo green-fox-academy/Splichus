@@ -1,8 +1,8 @@
-package com.greenfox.splichus.controllers;
+package com.greenfox.splichus.todos.controllers;
 
 
-import com.greenfox.splichus.models.Todo;
-import com.greenfox.splichus.repositories.TodoRepo;
+import com.greenfox.splichus.todos.models.Todo;
+import com.greenfox.splichus.todos.repositories.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +31,7 @@ public class MainController {
         } else {
             model.addAttribute("list", database.findAll());
         }
-        return "list";
+        return "home";
     }
 
     @GetMapping("/todo/add")
@@ -40,8 +40,27 @@ public class MainController {
     }
 
     @PostMapping("/todo/add")
-    public String add(String name) {
-        database.save(new Todo(name));
+    public String add(String name, boolean urgent, boolean done) {
+        database.save(new Todo(name, urgent, done));
+        return "redirect:/todo";
+    }
+    @GetMapping("/todo/edit")
+    public String edit(Long id, Model model) {
+        model.addAttribute("todo", database.findById(id).get());
+        return "edit";
+    }
+    @PostMapping("/todo/delete")
+    public String delete (Long id){
+        database.deleteById(id);
+        return "redirect:/todo";
+    }
+    @PostMapping("/todo/edit")
+    public String todo(Long id, String name, boolean done, boolean urgent) {
+        Todo helper = database.findById(id).get();
+        helper.setTitle(name);
+        helper.setDone(done);
+        helper.setUrgent(urgent);
+        database.save(helper);
         return "redirect:/todo";
     }
 }

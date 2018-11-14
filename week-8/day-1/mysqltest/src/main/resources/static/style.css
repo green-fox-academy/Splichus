@@ -1,0 +1,13 @@
+td {
+    border: 1px solid darkgray;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

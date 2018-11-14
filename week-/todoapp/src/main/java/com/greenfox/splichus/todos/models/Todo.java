@@ -1,4 +1,4 @@
-package com.greenfox.splichus.models;
+package com.greenfox.splichus.todos.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,19 +17,11 @@ public class Todo {
     public Todo() {
     }
 
-    public Todo(String title) {
-        this();
-        this.title = title;
-        this.urgent = false;
-        this.done = false;
-    }
-
     public Todo(String title, boolean urgent, boolean done) {
         this.title = title;
         this.urgent = urgent;
         this.done = done;
     }
-
     public long getId() {
         return id;
     }
@@ -44,5 +36,17 @@ public class Todo {
 
     public String getTitle() {
         return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setUrgent(boolean urgent) {
+        this.urgent = urgent;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
     }
 }

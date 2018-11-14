@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+    <link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+</header>
+<main>
+    <h1>Change your todo!</h1>
+    <form method="post" action="/todo/edit">
+        <input name="id" type="hidden" th:value="${todo.getId()}">
+        <input name="name" type="text" th:value="${todo.getTitle()}">
+        <label for="done">Finished</label>
+        <input id="done" name="done" type="checkbox" th:checked="${todo.isDone()}">
+        <label for="urgent">Urgent</label>
+        <input id="urgent" name="urgent" type="checkbox" th:checked="${todo.isUrgent()}">
+        <button type="submit">Submit</button>
+    </form>
+</main>
+<script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="/style.css"/>
+</head>
+<body>
+<main>
+    <h1>Add new todo!</h1>
+    <form method="post" action="/todo/add">
+        <input name="name" type="text">
+        <button type="submit">Submit</button>
+    </form>
+</main>
+</body>
+
+</html>

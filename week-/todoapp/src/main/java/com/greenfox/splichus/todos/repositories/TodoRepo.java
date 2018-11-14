@@ -1,6 +1,6 @@
-package com.greenfox.splichus.repositories;
+package com.greenfox.splichus.todos.repositories;
 
-import com.greenfox.splichus.models.Todo;
+import com.greenfox.splichus.todos.models.Todo;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
