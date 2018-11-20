@@ -5,8 +5,13 @@ public class Greeter {
     String error;
 
     public Greeter(String name, String title) {
+
         if (name == null) {
-            error = "Please provide a name!";
+            if (title == null) {
+                error = "Please provide name and title!";
+            } else {
+                error = "Please provide a name!";
+            }
         } else if (title == null){
             error = "Please provide a title!";
         } else {

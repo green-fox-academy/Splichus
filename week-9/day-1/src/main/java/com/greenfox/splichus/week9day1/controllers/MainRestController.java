@@ -22,7 +22,7 @@ public class MainRestController {
         this.logdatabase = logdatabase;
     }
 
-    @RequestMapping("/doubling")
+    @GetMapping("/doubling")
     public Doubling doubling(@RequestParam(required = false) Integer input) {
         Log log = new Log(LocalDateTime.now(),"/doubling", "\"input\": \""+input+"\"");
         logdatabase.save(log);

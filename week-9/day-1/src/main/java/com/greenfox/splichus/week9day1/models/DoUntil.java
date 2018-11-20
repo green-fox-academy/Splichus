@@ -5,6 +5,9 @@ public class DoUntil {
     Integer result;
     String error;
 
+    public DoUntil() {
+    }
+
     public DoUntil(String what, Integer number) {
         if (number != null) {
             if (what.equals("factor")){
@@ -29,5 +32,7 @@ public class DoUntil {
         return result;
     }
 
-
+    public String getError() {
+        return error;
+    }
 }
